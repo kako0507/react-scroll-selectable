@@ -3,6 +3,13 @@
 Allows individual or group selection of items using the mouse. Click and drag to lasso multiple items.
 Forked from [react-selectable](https://github.com/unclecheese/react-selectable)
 
+## Installation
+
+```
+npm install react-scroll-selectable
+bower install react-scroll-selectable
+```
+
 ## Usage
 
 ### JavaScript ES5
