@@ -1,0 +1,27 @@
+{
+  "name": "react-scroll-selectable",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kako0507/react-scroll-selectable",
+  "authors": [
+    "Uncle Cheese",
+    "Tim Kuo <Tim_Kuo@quantatw.com>"
+  ],
+  "description": "A compoent for react that allows mouse selection of child items with auto-scrolling.",
+  "main": "./lib/index.js",
+  "keywords": [
+    "react",
+    "drag",
+    "scroll",
+    "select",
+    "selection",
+    "selectable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
