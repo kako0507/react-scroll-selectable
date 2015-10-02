@@ -142,7 +142,12 @@ class Selectable extends Component {
     return (
       <this.props.component
         {...this.props}
-        style={{position: 'relative'}}
+        style={{
+          position: 'relative',
+          height: '100%',
+          overflowY: 'auto',
+          ...this.props.style
+        }}
         onMouseDown={::this._mouseDown}
       >
         {this.state.isBoxSelecting &&
