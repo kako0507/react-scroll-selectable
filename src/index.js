@@ -1,4 +1,6 @@
 import React, {Component, PropTypes} from 'react';
+import ReactDOM from 'react-dom';
+
 import cloneWithProps from 'react/lib/cloneWithProps';
 
 function isNodeInRoot(node, root) {
@@ -169,7 +171,7 @@ class Selectable extends Component {
    * of the selection box
    */
   _openSelector(e) {
-    let node = React.findDOMNode(this);
+    let node = ReactDOM.findDOMNode(this);
     let left = e.pageX - node.offsetLeft + node.scrollLeft;
     let top = e.pageY - node.offsetTop + node.scrollTop;
     let newLeft = left;
@@ -220,7 +222,7 @@ class Selectable extends Component {
    * Auto scrolling
    */
   scrollPerhaps(e) {
-    let node = React.findDOMNode(this);
+    let node = ReactDOM.findDOMNode(this);
     let {scrollSpeed} = this.props;
     // Scroll down
     if ((e.pageY + 10) > (node.offsetTop + node.offsetHeight)) {
@@ -255,7 +257,7 @@ class Selectable extends Component {
       return;
     }
 
-    let node = React.findDOMNode(this);
+    let node = ReactDOM.findDOMNode(this);
     let collides;
     let offsetData;
     let distanceData;
@@ -308,7 +310,7 @@ class Selectable extends Component {
     document.removeEventListener('mouseup', this._mouseUp);
 
     if(!this._mouseDownData) return;
-    let inRoot = isNodeInRoot(e.target, React.findDOMNode(this));
+    let inRoot = isNodeInRoot(e.target, ReactDOM.findDOMNode(this));
     let click = (e.pageX === this._mouseDownData.initialX && e.pageY === this._mouseDownData.initialY);
 
     // Clicks outside the Selectable node should reset clear selection
@@ -337,7 +339,7 @@ class Selectable extends Component {
     let index;
 
     React.Children.forEach(this.props.children, child => {
-      let node = React.findDOMNode(this.refs['selectable_' + child.key]);
+      let node = ReactDOM.findDOMNode(this.refs['selectable_' + child.key]);
       let collision = this._objectsCollide(
         node,
         {
@@ -388,8 +390,8 @@ class Selectable extends Component {
 
     React.Children.forEach(this.props.children, child => {
       let collision = this._objectsCollide(
-        React.findDOMNode(this.refs.selectbox),
-        React.findDOMNode(this.refs['selectable_'+child.key]),
+        ReactDOM.findDOMNode(this.refs.selectbox),
+        ReactDOM.findDOMNode(this.refs['selectable_'+child.key]),
         this.props.tolerance
       );
       if(collision) {
