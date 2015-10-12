@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-selectable",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A compoent for react that allows mouse selection of child items with auto-scrolling.",
   "main": "./lib/index.js",
   "authors": [
@@ -22,9 +22,6 @@
   },
   "bugs": {
     "url": "https://github.com/kako0507/react-scroll-selectable/issues"
-  },
-  "dependencies": {
-    "react": "^0.13.3"
   },
   "homepage": "https://github.com/kako0507/react-scroll-selectable",
   "devDependencies": {
