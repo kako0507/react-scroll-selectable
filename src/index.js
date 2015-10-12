@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
-import cloneWithProps from 'react/lib/cloneWithProps';
-
 function isNodeInRoot(node, root) {
   while (node) {
     if (node === root) {
@@ -156,7 +154,7 @@ class Selectable extends Component {
           <div style={boxStyle} ref="selectbox"/>
         }
         {React.Children.map(this.props.children,(child, i) => {
-          return cloneWithProps(child, {
+          return React.cloneElement(child, {
             key: child.key || i,
             ref: 'selectable_'+child.key,
             selected: this.state.selectedItems.indexOf(child.key) > -1
