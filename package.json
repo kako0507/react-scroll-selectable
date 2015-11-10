@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-selectable",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A compoent for react that allows mouse selection of child items with auto-scrolling.",
   "main": "./lib/index.js",
   "authors": [

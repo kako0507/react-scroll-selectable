@@ -103,6 +103,7 @@ class Selectable extends Component {
     this._openSelector = this._openSelector.bind(this);
     this._mouseUp = this._mouseUp.bind(this);
     this._selectElement = this._selectElement.bind(this);
+    this._keyListener = this._keyListener.bind(this);
   }
 
   /**
@@ -375,7 +376,7 @@ class Selectable extends Component {
       selectedItems: currentItems
     });
 
-    this.props.onSelection(currentItems);
+    this.props.onSelection(currentItems.map(item => item.substring(2)));
   }
 
   /**
@@ -404,7 +405,7 @@ class Selectable extends Component {
       selectedItems: currentItems
     });
 
-    this.props.onSelection(currentItems);
+    this.props.onSelection(currentItems.map(item => item.substring(2)));
   }
 
   /**
